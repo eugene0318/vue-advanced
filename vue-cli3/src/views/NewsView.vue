@@ -1,7 +1,31 @@
 <template lang="">
-  <div>news</div>
+  <div>
+    <div v-for="user in users">{{ user.title }}</div>
+  </div>
 </template>
 <script>
-export default {};
+//import axios from "axios";
+import { fetchNewsList } from "../api/index.js";
+export default {
+  data() {
+    return {
+      users: [],
+    };
+  },
+  created() {
+    var vm = this;
+    fetchNewsList()
+      .then(function (response) {
+        console.log(response);
+        //화살표함수 아닐때 this로 data 접근 불가능
+        vm.users = response.data;
+        //this.users = response.data;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  },
+  //getNewsList();
+};
 </script>
 <style lang=""></style>
