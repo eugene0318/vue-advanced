@@ -29,4 +29,4 @@ const router = createRouter({
   routes,
 });
 //라우터 추출
-export { router };
+export default router;
