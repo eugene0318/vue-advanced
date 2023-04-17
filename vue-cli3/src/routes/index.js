@@ -20,7 +20,7 @@ const routes = [
   { path: "/news", component: NewsView },
   { path: "/jobs", component: JobsView },
   { path: "/ask", component: AskView },
-  { path: "/user", component: UserView },
+  { path: "/user/:id", component: UserView },
   { path: "/item", component: ItemView },
 ];
 //라우터 생성
