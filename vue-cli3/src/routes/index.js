@@ -21,7 +21,7 @@ const routes = [
   { path: "/jobs", component: JobsView },
   { path: "/ask", component: AskView },
   { path: "/user/:id", component: UserView },
-  { path: "/item", component: ItemView },
+  { path: "/item/:id", component: ItemView },
 ];
 //라우터 생성
 const router = createRouter({
