@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <tool-bar></tool-bar>
-    <transition name="fade">
+    <transition name="page">
       <router-view></router-view>
     </transition>
   </div>
@@ -34,13 +34,13 @@ a.router-link-active {
   text-decoration: underline;
 }
 /* router transition*/
-.fade-enter-active,
-.fade-leave-active {
+.page-enter-active,
+.page-leave-active {
   transition: opacity 0.5s ease;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.page-enter-from,
+.page-leave-to {
   opacity: 0;
 }
 </style>
