@@ -17,9 +17,9 @@ import ItemView from "../views/ItemView.vue";
 
 const routes = [
   { path: "/", redirect: "/news" },
-  { path: "/news", component: NewsView },
-  { path: "/jobs", component: JobsView },
-  { path: "/ask", component: AskView },
+  { path: "/news", name: "news", component: NewsView },
+  { path: "/jobs", name: "jobs", component: JobsView },
+  { path: "/ask", name: "ask", component: AskView },
   { path: "/user/:id", component: UserView },
   { path: "/item/:id", component: ItemView },
 ];
