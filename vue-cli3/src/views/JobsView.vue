@@ -1,25 +1,20 @@
 <template lang="">
   <div>
-    <ul class="news-list">
+    <list-item></list-item>
+    <!-- <ul class="news-list">
       <li v-for="job in this.$store.state.jobs" class="post">
-        <!--포인트 영역-->
         <div class="points">{{ job.points || 0 }}</div>
-        <!--기타 정보 영역-->
         <div>
           <p class="news-title">
             <a v-bind:href="job.url">{{ job.title }}</a>
           </p>
           <small class="link-text">
             {{ job.time_ago }} by
-            <!-- <router-link v-bind:to="`/user/${job.user}`" class="link-text">{{
-              job.domain
-            }}</router-link> -->
-
             <a v-bind:href="job.url">{{ job.domain }}</a>
           </small>
         </div>
       </li>
-    </ul>
+    </ul> -->
 
     <!-- <p v-for="job in this.$store.state.jobs">
       <a v-bind:href="job.url">{{ job.title }}</a
@@ -28,12 +23,16 @@
   </div>
 </template>
 <script>
+import ListItem from "../components/ListItem.vue";
 export default {
   // data() {
   //   return {
   //     jobs: [],
   //   };
   // },
+  components: {
+    ListItem,
+  },
   created() {
     this.$store.dispatch("FETCH_JOBS");
     //var vm = this;

@@ -1,6 +1,7 @@
 <template lang="">
   <div>
     <section>
+      <!--질문 상세 정보-->
       <div class="user-container">
         <div><i class="fas fa-user"></i></div>
         <div class="user-description">
