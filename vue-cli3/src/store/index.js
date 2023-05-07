@@ -18,7 +18,7 @@ const store = createStore({
     jobs: [],
     ask: [],
     user: [],
-    item: [],
+    item: {},
   },
   getters: {
     fetchedAsk(state) {

@@ -24,6 +24,7 @@
 </template>
 <script>
 import ListItem from "../components/ListItem.vue";
+import emitter from "../utils/miit";
 export default {
   // data() {
   //   return {
@@ -39,6 +40,17 @@ export default {
     // fetchJobsList()
     //   .then((response) => (this.jobs = response.data))
     //   .catch((error) => console.log(error));
+    setTimeout(() => {
+      this.$store
+        .dispatch("FETCH_NEWS")
+        .then(() => {
+          console.log("fetched");
+          this.emitter.emit("end:spinner");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, 3000);
   },
 };
 </script>
