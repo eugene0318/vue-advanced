@@ -4,6 +4,7 @@ import {
   fetchAskList,
   fetchUserInfo,
   fetchCommitItem,
+  fetchList,
 } from "../api/index.js";
 export default {
   FETCH_NEWS(context) {
@@ -53,5 +54,10 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+  },
+  FETCH_LIST({ commit }, pageName) {
+    fetchList(pageName)
+      .then(({ page }) => commit("SET_LIST", data))
+      .catch((error) => console.log(error));
   },
 };
