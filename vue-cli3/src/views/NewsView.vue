@@ -6,25 +6,25 @@
 <script>
 import ListItem from "../components/ListItem.vue";
 import emitter from "../utils/miit";
+import ListMixin from "../mixins/ListMixin";
 
 export default {
   components: {
     ListItem,
   },
-  created() {
-    this.emitter.emit("start:spinner");
-    setTimeout(() => {
-      this.$store
-        .dispatch("FETCH_NEWS")
-        .then(() => {
-          console.log("fetched");
-          this.emitter.emit("end:spinner");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 3000);
-  },
+  mixins: [ListMixin],
+  // created() {
+  //   this.emitter.emit("start:spinner");
+  //   this.$store
+  //     .dispatch("FETCH_NEWS")
+  //     .then(() => {
+  //       console.log("fetched");
+  //       this.emitter.emit("end:spinner");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // },
 };
 </script>
 <style lang=""></style>
