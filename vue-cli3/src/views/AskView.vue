@@ -35,6 +35,9 @@ export default {
   components: {
     ListItem,
   },
+  // mounted() {
+  //   this.$emitter.emit("end:spinner");
+  // },
   mixins: [ListMixin],
   // created() {
   //   this.$store.dispatch("FETCH_ASK");

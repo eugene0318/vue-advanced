@@ -11,7 +11,8 @@
 <script>
 import ToolBar from "./components/ToolBar.vue";
 import Spinner from "./components/Spinner.vue";
-import emitter from "./utils/miit";
+//import emitter from "./utils/miit";
+import emitter from "./main.js";
 export default {
   methods: {},
   components: {
@@ -32,10 +33,10 @@ export default {
     },
   },
   created() {
-    this.emitter.on("start:spinner", this.startSpinner);
+    this.$emitter.on("start:spinner", this.startSpinner);
   },
   beforeDestroy() {
-    this.emitter.off("start:spinner", this.startSpinner);
+    this.$emitter.off("start:spinner", this.startSpinner);
   },
 };
 </script>

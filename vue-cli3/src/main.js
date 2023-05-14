@@ -2,12 +2,15 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./routes/index";
 import store from "./store/index.js";
-import miit from "./utils/miit";
+import mitts from "mitt"; // [mitt]]
+//import miit from "./utils/miit";
 const app = createApp(App);
 
 app.use(router);
 app.use(store);
-app.use(miit);
+const emitter = mitts();
+app.config.globalProperties.$emitter = emitter;
+app.use(mitts);
 app.mount("#app");
 
 // new Vue({

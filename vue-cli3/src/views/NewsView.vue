@@ -12,6 +12,9 @@ export default {
   components: {
     ListItem,
   },
+  // mounted() {
+  //   this.$emitter.emit("end:spinner");
+  // },
   mixins: [ListMixin],
   // created() {
   //   this.emitter.emit("start:spinner");
