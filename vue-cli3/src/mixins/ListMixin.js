@@ -6,6 +6,7 @@ export default {
     this.$store
       .dispatch("FETCH_LIST", this.$route.name)
       .then(() => {
+        console.log(5);
         console.log("fetched");
         this.emitter.emit("end:spinner");
       })

@@ -8,6 +8,9 @@ import UserView from "../views/UserView.vue";
 import ItemView from "../views/ItemView.vue";
 import createListView from "@/views/CreatedListView";
 
+import store from "../store/index.js";
+import emiiter from "../utils/miit.js";
+
 // export const router = new VueRouter({
 //   routes: [
 //     { path: "/news", component: NewsView },
@@ -22,6 +25,23 @@ const routes = [
     path: "/news",
     name: "news",
     component: NewsView,
+    beforeEnter: (to, from, next) => {
+      this.emiiter.emit("start:spinner");
+      store
+        .dispatch("FETCH_LIST", to.name)
+        .then(() => {
+          console.log(5);
+          console.log("fetched");
+          this.emiiter.emit("end:spinner");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      // console.log("to", to);
+      // console.log("from", from);
+      // console.log("next", next);
+      // next();
+    },
     //component: createListView("NewsView"),
   },
   {
