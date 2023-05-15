@@ -7,11 +7,17 @@ const config = {
 
 // 2.api함수들을 정리
 function fetchNewsList() {
-  return axios.get(`${config.baseUrl}news/1.json`);
+  // return axios.get(`${config.baseUrl}news/1.json`);
+  return new Promise();
 }
 
 function fetchAskList() {
-  return axios.get(`${config.baseUrl}ask/1.json`);
+  try {
+    const response = axios.get(`${config.baseUrl}ask/1.json`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function fetchJobsList() {
